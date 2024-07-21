@@ -1,0 +1,70 @@
+---
+title: "Hussein's Article"
+output: html_notebook
+---
+
+#Import the dataset
+```{r}
+data = read.csv("vehicles_dataset.csv")
+data
+```
+#Display first 5 rows of the dataset
+```{r}
+head(data)
+```
+#Get the summary of the dataset
+```{r}
+summary(data)
+```
+#Finding whether there are any missing values
+```{r}
+colSums(is.na(data))
+```
+```{r}
+library(ggplot2)
+```
+#Plot the gragh
+```{r}
+Four_wheelDrive = data[data$drivetrain == "Four-wheel Drive", ]
+All_wheelDrive = data[data$drivetrain == "All-wheel Drive", ]
+Rear_wheelDrive = data[data$drivetrain == "Rear-wheel Drive", ]
+
+par(mfrow = c(1, 3))
+plot(Four_wheelDrive$price,Four_wheelDrive$mileage,
+     main = "Price vs. Mileage four wheel",
+     xlab = "mileage",
+     ylab = "price",
+     col = "blue",
+     pch = 19)
+
+plot(All_wheelDrive$price, All_wheelDrive$mileage,
+     main = "Price vs Mileage All wheel",
+     xlab = "mileage",
+     ylab = "price",
+     col = "blue",
+     pch = 19)
+
+plot(Rear_wheelDrive$price, Rear_wheelDrive$mileage,
+     main = "Price vs Mileage Rear wheel",
+     xlab = "mileage",
+     ylab = "price",
+     col = "blue",
+pch=19)
+```
+Summary of the graph
+```{r}
+model=lm(price~mileage,data)
+plot(data$mileage,data$price)
+abline(model,col='red')
+summary(model)
+```
+Predict value of price with a vehicle having mileage 32000
+```{r}
+new_car=data.frame(mileage=c(32000))
+predict(model,new_car)
+```
+#therefore, a car with mileage 32000 miles will cost around 142392.1(units)
+
+
+
+
