@@ -3,4 +3,13 @@ title: "README.md"
 output: html_document
 date: "2024-07-21"
 ---
-Created repository in github
+<a rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+  <img src="https://i.creativecommons.org/l/by/3.0/88x31.png" />
+</a>
+<br />
+This page, by
+<a href="http://lessig.org/">Lawrence Lessig</a>,
+is licensed under a
+<a rel="license" href="https://creativecommons.org/licenses/by/3.0/">
+  Creative Commons Attribution License</a>.
+  Created repository in github
